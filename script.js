@@ -28,14 +28,14 @@ function handleCalculateAge() {
   let ageMonths = today.getMonth() - birthDate.getMonth();
   let ageDays = today.getDate() - birthDate.getDate();
 
-  // Get the number of days in the last month
+  // Adjust days if negative
   if (ageDays < 0) {
     ageMonths--;
-    const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-    ageDays += lastMonth.Date();
+    const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0); // Get the last day of the previous month
+    ageDays += lastMonth.getDate(); // Fix here: Use getDate() to retrieve the number of days
   }
 
-  // Add 12 months to get the correct month difference
+  // Adjust months if negative
   if (ageMonths < 0) {
     ageYears--;
     ageMonths += 12;
@@ -43,9 +43,9 @@ function handleCalculateAge() {
 
   return `Hello ${name}! Your Age is: \n${ageYears} year${
     ageYears !== 1 ? "s" : ""
-  }, ${ageMonths} month${ageMonths !== 1 ? "s" : ""}, ${ageDays} day${
+  }, ${ageMonths} month${ageMonths !== 1 ? "s" : ""}, and ${ageDays} day${
     ageDays !== 1 ? "s" : ""
-  }`;
+  }.`;
 }
 
 const rl = readline.createInterface({
@@ -71,9 +71,6 @@ rl.question("What is Your Name Buddy? ", (inputtedName) => {
         day = parseInt(inputtedDay);
 
         // Calculate and display the result
-        // console.log(
-        //   `Hello, ${name}! You were born on ${year}-${month}-${day}.`
-        // );
         console.log(" ");
         console.log(handleCalculateAge());
 
