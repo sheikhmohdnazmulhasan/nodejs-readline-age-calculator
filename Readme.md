@@ -1,6 +1,6 @@
 # Tiny Age Calculator
 
-Welcome to the **Tiny Age Calculator** project! This is a Node.js-based CLI application that calculates a user's age based on their input (year, month, and day of birth). The app prompts the user for their name and birth details, then calculates and displays their exact age in years, months, and days.
+Welcome to the **Tiny Age Calculator** This is a Node.js-based simple CLI script that calculates a user's age based on their input (year, month, and day of birth). The app prompts the user for their name and birth details, then calculates and displays their exact age in years, months, and days.
 
 ## Features
 
